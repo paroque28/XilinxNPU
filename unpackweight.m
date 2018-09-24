@@ -1,9 +1,8 @@
-function [W1,W2]=unpackweight(w,sW1,sW2)
+function [W1,W2]=unpackweight(w,W1size,W2size)
 
-    rW1=sW1(1,1); # de filas de W1
-    cW1=sW1(1,2); # de colunmas de W1
-    rW2=sW2(1,1); # de filas de W2
-    cW2=sW2(1,2); # de columnas de W2
-    W1=reshape(w(1:(rW1*cW1)),rW1,cW1);
-    W2=reshape(w(rW1*cW1+1:rows(w)),rW2,cW2);
+    W1rows=W1size(1,1);W1cols=W1size(1,2);
+    W2rows=W2size(1,1);W2cols=W2size(1,2);
+    
+    W1=reshape(w(1:(W1rows*W1cols)),W1rows,W1cols);
+    W2=reshape(w(W1rows*W1cols+1:rows(w)),W2rows,W2cols);
 endfunction;
