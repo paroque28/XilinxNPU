@@ -12,6 +12,10 @@ function y=target(W1,W2,X,Y)
   #     equal to 1
   # Y:  labels of the training set
     
-  # PONGA SU CODIGO AQUÍ
-  
+  Y_hat=predict(W1,W2,X);
+
+  delta=Y-Y_hat;
+  delta2=delta.*delta; 
+  y=0.5*sum(delta2');
+
 endfunction;
