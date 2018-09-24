@@ -14,10 +14,10 @@ function y=predict(W1,W2,X)
 
   p1=[ones(rows(X),1),X]*W1'; # p1 = W1*[1 X]'
 
-  activacion1=1./(1+e.^-y1); #funcion de activacion capa de entrada y escondida
-  activacion1=[ones(rows(activacion1),1),activacion1]; # Se agregan los unos
+  g1=1./(1+e.^-p1); #funcion de activacion capa de entrada y escondida
+  activacion1=[ones(rows(g1),1),g1]; # Se agregan los unos
 
   p2=activacion1*W2'; # p2  = W2*[1 X]'
-  y=1./(1+e.^-p2); #funcion de activacion capa de salida
+  y=1./(1+e.^-p2); # = g2 funcion de activacion capa de salida
 
 endfunction;
