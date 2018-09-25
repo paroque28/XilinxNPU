@@ -9,10 +9,10 @@ function [W1,W2]=train(W1,W2,X,Y,lambda,batchSize)
     W1size=size(W1);
     W2size=size(W2);
     XY = [X,Y];
-    XY_samples = XY(randi(length(XY),batchSize,1),:)
+    XY_samples = XY(randi(length(XY),batchSize,1),:);
 
     X_samples = XY_samples(:,1:columns(X))
-    Y_samples = XY_samples(:,columns(X)+1:end)
+    Y_samples = XY_samples(:,columns(X)+1:end);
     #Backpropagation
     do
         counter=counter+1;

@@ -4,9 +4,10 @@ lambda  = 0.1
 batchSize = 3
 
 # crear datos
-[X,Y]=create_data(1000, numClasses);
+[X,Y]=create_data(5, numClasses);
+X
 # plotear datos
-plot_data(X,Y);
+#plot_data(X,Y);
 NumNeuronas=4
 # +1 por sesgo (constante) en cada capa
 W1=weight_generator(NumNeuronas,columns(X)+1);
