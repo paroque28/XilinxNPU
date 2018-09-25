@@ -1,6 +1,6 @@
 function [W1,W2]=train(W1,W2,X,Y,lambda,batchSize)
 
-    threshold = 0.0001;
+    threshold = 0.001;
     iteraciones = 0;
 
     X=[ones(rows(X),1),X];
@@ -26,13 +26,11 @@ function [W1,W2]=train(W1,W2,X,Y,lambda,batchSize)
 
         [W1,W2]=unpackweight(w,W1size,W2size);
 
-        J=target(W1,W2,X,Y);
+        J=target(W1,W2,X,Y)
+
 
 
     until(abs(J-J_inicial)<=threshold);
     J
     iteraciones
-    predict(W1, W2, X)
-    figure (2)
-    plot_data(X(:,2:end),predict(W1, W2, X));
 endfunction;
