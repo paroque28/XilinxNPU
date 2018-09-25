@@ -15,7 +15,8 @@ function y=target(W1,W2,X,Y)
   Y_hat=predict(W1,W2,X);
 
   delta=Y-Y_hat;
-  delta2=delta.*delta; 
-  y=0.5*sum(delta2');
+  delta2=delta.*delta;
+  suma = sum(sum(delta2));
+  y=0.5*suma;
 
 endfunction;

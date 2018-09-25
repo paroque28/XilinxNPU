@@ -11,7 +11,6 @@ function y=predict(W1,W2,X)
   # X:  Input vector, extended at its end with a 1
 
   # De la formula (2) del enunciado
-W1
   p1=X*W1'; # p1 = W1*[1 X]'
 
   g1=1./(1+e.^-p1); #funcion de activacion capa de entrada y escondida

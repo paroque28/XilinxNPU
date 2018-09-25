@@ -23,7 +23,7 @@ function [gW1,gW2]=gradtarget(W1,W2,X,Y)
   ################################################
 
   #Back-propagation
-  sigmak=(Y-Y_hat);
+  delta2=abs(Y-Y_hat);
 
   sumaDeltaj=delta2*W2(:,2:end);
   derivZj=(1-g1).*g1;
