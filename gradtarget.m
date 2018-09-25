@@ -22,15 +22,25 @@ function [gW1,gW2]=gradtarget(W1,W2,X,Y)
   Y_hat=1./(1+e.^-p2); #funcion de activacion capa de salida
   ################################################
 
+<<<<<<< HEAD
   #Back-propagation
   sigmak=(Y-Y_hat);
+=======
 
-  sumaDeltaj=sigmak*W2(:,2:end);
+  #Backpropagation
+  gW1=zeros(rows(W1),columns(W1));
+  gW2=zeros(rows(W2),columns(W2));
+
+
+  delta2=(Y-Y_hat);
+>>>>>>> c46940f3e142bd314b2353c49a27a86c67575b0d
+
+  sumaDeltaj=delta2*W2(:,2:end);
   derivZj=(1-g1).*g1;
   sigmaJ=derivZj.*sumaDeltaj;
 
   gW1= sigmaJ'*X;
-  gW2= sigmak'*activacion1;
+  gW2= delta2'*activacion1;
 
   #############################################
   #Normalización
