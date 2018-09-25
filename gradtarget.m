@@ -1,15 +1,15 @@
 function [gW1,gW2]=gradtarget(W1,W2,X,Y)
 
   # usage gradtarget(W1,W2,X,Y)
-  # 
+  #
   # This function evaluates the gradient of the target function on W1 and W2.
-  # 
+  #
   # W1: weights matrix between input and hidden layer
   # W2: weights matrix between the hidden and the output layer
-  # X:  training set holding on the rows the input data, plus a final column 
+  # X:  training set holding on the rows the input data, plus a final column
   #     equal to 1
   # Y:  labels of the training set
-  
+
   #############################################
   #Copia identica de predict para obtener pasos intermedios
   #############################################
@@ -28,13 +28,13 @@ function [gW1,gW2]=gradtarget(W1,W2,X,Y)
   gW2=zeros(rows(W2),columns(W2));
 
 
-  sigmak=-(Y-Y_hat); 
+  sigmak=(Y-Y_hat);
 
   sumaDeltaj=sigmak*W2(:,2:end);
   derivZj=(1-g1).*g1;
-  sigmaJ=derivZj.*sumaDeltaj; 
+  sigmaJ=derivZj.*sumaDeltaj;
 
-  gW1= sigmaJ'*X; 
+  gW1= sigmaJ'*X;
   gW2= sigmak'*activacion1;
 
   m=rows(X);
