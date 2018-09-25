@@ -26,7 +26,7 @@ function [W1,W2]=train(W1,W2,X,Y,lambda,batchSize)
         
         [W1,W2]=unpackweight(w,W1size,W2size);
         
-        J=target(W1,W2,X,Y)
+        J=target(W1,W2,X,Y);
 
 
     until(abs(J-J_inicial)<=threshold);
