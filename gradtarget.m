@@ -28,14 +28,14 @@ function [gW1,gW2]=gradtarget(W1,W2,X,Y)
   gW2=zeros(rows(W2),columns(W2));
 
 
-  sigmak=(Y-Y_hat);
+  delta2=(Y-Y_hat);
 
-  sumaDeltaj=sigmak*W2(:,2:end);
+  sumaDeltaj=delta2*W2(:,2:end);
   derivZj=(1-g1).*g1;
   sigmaJ=derivZj.*sumaDeltaj;
 
   gW1= sigmaJ'*X;
-  gW2= sigmak'*activacion1;
+  gW2= delta2'*activacion1;
 
   m=rows(X);
   gW1=gW1./m; #gradiente de la matriz W1

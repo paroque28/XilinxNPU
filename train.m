@@ -1,4 +1,4 @@
-function [W1,W2]=train(W1,W2,X,Y,lambda)
+function [W1,W2]=train(W1,W2,X,Y,lambda,batchSize)
 
     threshold = 0.00005;
     counter = 0;
