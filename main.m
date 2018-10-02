@@ -6,7 +6,7 @@ numClasses = 3
 NumNeuron=4
 lambda = 1
 threshold = 0.0001
-total = 400
+total = 10
 batchproportion = 1
 batchSize = total*batchproportion
 style = "horizontal"
@@ -21,12 +21,13 @@ W2=weight_generator(columns(Y),rows(W1)+1);
 [W1,W2]=train(W1,W2,X,Y,lambda,batchSize,threshold);
 
 #Visualizacion de datos;
+hold off;
 figure(1);
 plot_data(X,Y);
 figure(2);
 view(W1,W2,400,5);
 
 # Evaluación de resultados
-[Xev,Yev]=create_data(total, numClasses, style);
-testY = predict(W1, W2, Xev);
-CM = conf_matrix(Yev, testY, numClasses)
+[XEval,YEval]=create_data(total, numClasses, style);
+YPredict = predict(W1, W2, XEval);
+[C,Sen,Pre,F1] = confusion(YEval, YPredict)

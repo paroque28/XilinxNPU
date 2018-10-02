@@ -8,13 +8,13 @@ function plot_data(X,Y)
   i0(i0==0)=[]; # remove all zeros from the vector
   
   #hold off;
-  plot(X(i0,1),X(i0,2),'k+');
+  plot(X(i0,1),X(i0,2),'b+');
   hold on;
   # Markers + o * x s d ^ v > <
   # Colors  k r g b y m c 
   
   markers = ['+','o','*','x','s','d','^','v','>','<'];
-  colors  = ['k','r','b','m','g','c','y'];
+  colors  = ['b','g','r','m','g','c','y'];
   
   for i=[2:columns(Y)]
     # Prepare the style recycling the markers and colors
