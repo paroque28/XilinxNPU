@@ -13,14 +13,12 @@ style = "horizontal"
 #########################################
 
 [X,Y]=create_data(total, numClasses, style);
-Y
 
 W1=weight_generator(NumNeuron,columns(X)+1);
 
 W2=weight_generator(columns(Y),rows(W1)+1);
 
 [W1,W2]=train(W1,W2,X,Y,lambda,batchSize,threshold);
-W1
 
 #Visualizacion de datos;
 figure(1);
