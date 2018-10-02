@@ -1,6 +1,6 @@
-function [W1,W2]=train(W1,W2,X,Y,lambda,batchSize)
+function [W1,W2]=train(W1,W2,X,Y,lambda,batchSize,threshold)
 
-    threshold = 0.001;
+    
     iteraciones = 0;
 
     X=[ones(rows(X),1),X];
