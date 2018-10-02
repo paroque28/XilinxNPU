@@ -1,4 +1,4 @@
-function conf_mat = conf_matrix (Yev, testY, size=3)
+function conf_mat = conf_matrix (Yev, testY, size)
 
   testY = round(testY);
 

@@ -31,4 +31,4 @@ view(W1,W2,400,5);
 # Evaluación de resultados
 [Xev,Yev]=create_data(total, numClasses, style);
 testY = predict(W1, W2, Xev);
-CM = conf_matrix(Yev, testY, 3)
+CM = conf_matrix(Yev, testY, numClasses)
