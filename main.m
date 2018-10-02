@@ -1,27 +1,26 @@
-pkg load statistics;
-numClasses = 3;
-<<<<<<< HEAD
-lambda  = 0.0001
-batchSize = 50
-=======
-lambda  = 0.001
-batchSize = 500
->>>>>>> 8f08747551af8854310c6cfd984f2391cafafb6e
+pkg load statistics
+pkg load optim
 
-# crear datos
-[X,Y]=create_data(100, numClasses);
-# plotear datos
-#plot_data(X,Y);
-NumNeuronas=7;
-# +1 por sesgo (constante) en cada capa
-W1=weight_generator(NumNeuronas,columns(X)+1);
+numClasses = 3
+NumNeuron=4
+lambda = 5
+total = 100
+batchproportion = 1
+batchSize = total*batchproportion
+
+
+[X,Y]=create_data(100, numClasses, "vertical");
+
+
+
+W1=weight_generator(NumNeuron,columns(X)+1);
 W2=weight_generator(columns(Y),rows(W1)+1);
 
-<<<<<<< HEAD
-#[W1,W2]=train(W1,W2,X,Y,lambda,batchSize);
-view(X,Y,W1,W2,100);
-=======
-#target(W1,W2,[ones(rows(X),1),X],Y)
+[X,Y]=create_data(100,3,"vertical");
+[W1,W2]=train(W1,W2,X,Y,lambda,batchSize);
 
-train(W1,W2,X,Y,lambda,batchSize);
->>>>>>> 8f08747551af8854310c6cfd984f2391cafafb6e
+#Visualizacion de datos;
+figure(1);
+plot_data(X,Y);
+figure(2);
+view(W1,W2,400,5);

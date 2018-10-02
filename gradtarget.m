@@ -13,6 +13,7 @@ function [gW1,gW2]=gradtarget(W1,W2,X,Y)
   #############################################
   #Copia identica de predict para obtener pasos intermedios
   #############################################
+
   p1=X*W1'; # p1 = W1*[1 X]'
 
   g1=1./(1+e.^-p1); #funcion de activacion capa de entrada y escondida
@@ -23,7 +24,7 @@ function [gW1,gW2]=gradtarget(W1,W2,X,Y)
   ################################################
 
   #Back-propagation
-  delta2=abs(Y-Y_hat);
+  delta2=-(Y-Y_hat);
 
   sumaDeltaj=delta2*W2(:,2:end);
   derivZj=(1-g1).*g1;
