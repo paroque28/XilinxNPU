@@ -1,12 +1,12 @@
-function [X,Y]=create_data(numSamples,numClasses=3,shape="radial")
-    
+function [X,Y]=create_data(numSamples,numClasses=3,shape)
+
     # usage [X,Y] = create_data(numSamples,numClasses=3,shape)
-    # 
+    #
     # This function creates random examples in the two-dimensional
     # space from -1 to 1 in each coordinate.  The output Y is arranged
     # in numClasses outputs, such that they can be used as outputs of
     # artificial neurons (or units) directly.
-    # 
+    #
     # Inputs:
     #   numSamples: total number of samples in the training set
     #   numClasses: total number of classes in the training set
@@ -17,7 +17,7 @@ function [X,Y]=create_data(numSamples,numClasses=3,shape="radial")
     #          'horizontal' horizontal bands
     #
     # Outputs:
-    #   X: Design matrix, with only the two coordinates on each row 
+    #   X: Design matrix, with only the two coordinates on each row
     #      (no 1 prepended).  Its size is numSamples x 2
     #   Y: Corresponding class to each training sample.  Its size is
     #      numSamples x numClasses
@@ -48,8 +48,8 @@ function [X,Y]=create_radial(numSamples,numClasses)
 
   # A little trickier: we want to set to 1 the element of the column
   # indicated in the index
-  
-  # Use the idx as the column for each sample that needs to be set 
+
+  # Use the idx as the column for each sample that needs to be set
   Y(sub2ind(size(Y),(1:numSamples)',idx))=1;
 endfunction;
 
@@ -64,8 +64,8 @@ function [X,Y]=create_pie(numSamples,numClasses)
 
   # A little trickier: we want to set to 1 the element of the column
   # indicated in the index
-  
-  # Use the idx as the column for each sample that needs to be set 
+
+  # Use the idx as the column for each sample that needs to be set
   Y(sub2ind(size(Y),(1:numSamples)',idx))=1;
 endfunction;
 
@@ -78,8 +78,8 @@ function [X,Y]=create_vertical(numSamples,numClasses)
 
   # A little trickier: we want to set to 1 the element of the column
   # indicated in the index
-  
-  # Use the idx as the column for each sample that needs to be set 
+
+  # Use the idx as the column for each sample that needs to be set
   Y(sub2ind(size(Y),(1:numSamples)',idx))=1;
 
 endfunction;
@@ -93,7 +93,7 @@ function [X,Y]=create_horizontal(numSamples,numClasses)
 
   # A little trickier: we want to set to 1 the element of the column
   # indicated in the index
-  
-  # Use the idx as the column for each sample that needs to be set 
+
+  # Use the idx as the column for each sample that needs to be set
   Y(sub2ind(size(Y),(1:numSamples)',idx))=1;
 endfunction;
