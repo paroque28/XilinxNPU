@@ -1,6 +1,19 @@
-3.1.1 Punto uno listo Prediccion
-3.1.2 Punto dos listo target
-3.1.3 Punto 3 en proceso
+## Red Neural Simple
 
+# Ejecucion 
 
-3.2.1 Falta documentar unpack y rename
+```bash
+    octave main.m
+```
+# Configuracion
+Modifique las varibles que estan el el archivo main.
+ ```octave
+    numClasses = 3 
+    NumNeuron=4
+    lambda = 1 % salto de lambdas
+    threshold = 0.0001 % condicion de parada
+    total = 1000
+    batchproportion = 1 % batchsize en porcentaje
+    batchSize = total*batchproportion
+    style = "horizontal" %estilo de grafico
+ ```

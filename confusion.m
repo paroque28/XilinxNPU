@@ -17,11 +17,11 @@ for i=1:c
   end
 end   
 % Sensitivity
-Sen = zeros(c,1)
+Sen = zeros(c,1);
 % Precission
-Pre = zeros(c,1)
+Pre = zeros(c,1);
 % F1
-F1 = zeros(c,1)
+F1 = zeros(c,1);
 for k=1:c
     TP = 0;
     FP = 0;

@@ -6,8 +6,8 @@ numClasses = 3
 NumNeuron=4
 lambda = 1
 threshold = 0.0001
-total = 10
-batchproportion = 1
+total = 1000
+batchproportion = 0.7
 batchSize = total*batchproportion
 style = "horizontal"
 #########################################
@@ -31,3 +31,4 @@ view(W1,W2,400,5);
 [XEval,YEval]=create_data(total, numClasses, style);
 YPredict = predict(W1, W2, XEval);
 [C,Sen,Pre,F1] = confusion(YEval, YPredict)
+waitfor(0)
