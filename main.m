@@ -3,17 +3,21 @@ pkg load optim
 
 ##############  VARIABLES ###############
 numClasses = 3
-NumNeuron=4
+NumNeuron=64
 lambda = 1
-threshold = 0.0001
+threshold = 0.00001
 total = 1000
 batchproportion = 0.7
 batchSize = total*batchproportion
-style = "horizontal"
+style = "radial"
 #########################################
 
 [X,Y]=create_data(total, numClasses, style);
 
+hold off;
+figure(1);
+plot_data(X,Y);
+refresh(1);
 W1=weight_generator(NumNeuron,columns(X)+1);
 
 W2=weight_generator(columns(Y),rows(W1)+1);
@@ -21,9 +25,6 @@ W2=weight_generator(columns(Y),rows(W1)+1);
 [W1,W2]=train(W1,W2,X,Y,lambda,batchSize,threshold);
 
 #Visualizacion de datos;
-hold off;
-figure(1);
-plot_data(X,Y);
 figure(2);
 view(W1,W2,400,5);
 

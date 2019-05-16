@@ -27,7 +27,12 @@ function [W1,W2]=train(W1,W2,X,Y,lambda,batchSize,threshold)
         [W1,W2]=unpackweight(w,W1size,W2size);
         
         J=target(W1,W2,X,Y);
-
+        
+        if (mod(iteraciones,50) == 0)
+            figure(2);
+            view(W1,W2,400,5);
+            refresh(2);
+        endif
 
 
     until(abs(J-J_inicial)<=threshold);
