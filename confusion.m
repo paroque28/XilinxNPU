@@ -34,21 +34,21 @@ for k=1:c
                     TP = TP + C(i,j);
                 else
                     FP = FP + C(i,j);
-                endif
+                end
                 
             else
                 if(k==j)
                     FN = FN + C(i,j);
                 else
                     TN = TN + C(i,j);
-                endif
-            endif
-        endfor
-    endfor
+                end
+                end
+            end
+        end
     Sen(k) = TP / (TP+FN);
     Pre(k) = TP / (TP+FP);
     F1(k) = (2*TP)/(2*TP+FP+FN) ;
-endfor
+    end
 
 
-endfunction
+end
